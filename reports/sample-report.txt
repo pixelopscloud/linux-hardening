@@ -1,0 +1,122 @@
+==================================================
+           Linux Hardening Audit
+==================================================
+
+Hostname : ip-172-31-30-19
+User     : ubuntu
+OS       : Ubuntu 24.04.4 LTS
+Date     : Fri Sep 18 17:18:37 UTC 2026
+
+--------------------------------------------------
+1. SSH Root Login
+--------------------------------------------------
+[FAIL] SSH root login setting: without-password
+
+--------------------------------------------------
+2. SSH Password Authentication
+--------------------------------------------------
+[PASS] SSH password authentication is disabled
+
+--------------------------------------------------
+3. UFW Firewall
+--------------------------------------------------
+[FAIL] UFW firewall is inactive
+
+--------------------------------------------------
+4. ASLR - Address Space Layout Randomization
+--------------------------------------------------
+[PASS] ASLR is fully enabled
+
+--------------------------------------------------
+5. Kernel dmesg Restriction
+--------------------------------------------------
+[PASS] Kernel dmesg access is restricted
+
+--------------------------------------------------
+6. /etc/shadow Permissions
+--------------------------------------------------
+[PASS] /etc/shadow permissions are secure: 640
+
+--------------------------------------------------
+7. Password Policy
+--------------------------------------------------
+[WARN] Password maximum age: 99999 days
+
+--------------------------------------------------
+8. Listening TCP Ports
+--------------------------------------------------
+       127.0.0.54:53
+       127.0.0.1:45713
+       0.0.0.0:22
+       127.0.0.53%lo:53
+       [::]:22
+       *:3000
+       *:9090
+       *:9100
+
+[INFO] Listening ports are reported for review.
+
+--------------------------------------------------
+9. Automatic Security Updates
+--------------------------------------------------
+[PASS] Automatic security updates are enabled
+
+--------------------------------------------------
+10. Sudo Privileges
+--------------------------------------------------
+[INFO] Users with sudo privileges:
+       ubuntu
+--------------------------------------------------
+11. Sudo NOPASSWD Configuration
+--------------------------------------------------
+[WARN] NOPASSWD sudo configuration found:
+       /etc/sudoers.d/90-cloud-init-users:ubuntu ALL=(ALL) NOPASSWD:ALL
+
+--------------------------------------------------
+12. User Account Login Shells
+--------------------------------------------------
+[INFO] Users with login-capable shells:
+       ubuntu:/bin/bash
+
+--------------------------------------------------
+13. Failed Systemd Services
+--------------------------------------------------
+[PASS] No failed systemd services found
+
+--------------------------------------------------
+14. SSH Configuration
+--------------------------------------------------
+[WARN] SSH X11 forwarding: yes
+[INFO] SSH protocol setting: default
+
+--------------------------------------------------
+15. IP Forwarding
+--------------------------------------------------
+[WARN] IPv4 packet forwarding is enabled
+
+--------------------------------------------------
+16. Kernel Security Parameters
+--------------------------------------------------
+[WARN] Reverse path filtering: 2
+[PASS] ICMP redirects are disabled
+
+--------------------------------------------------
+17. World-Writable Files
+--------------------------------------------------
+[PASS] No world-writable files found in critical directories
+
+--------------------------------------------------
+18. Critical File Ownership
+--------------------------------------------------
+[PASS] Critical account files are owned by root
+
+
+==================================================
+                 AUDIT SUMMARY
+==================================================
+PASS : 9
+WARN : 5
+FAIL : 2
+==================================================
+[RESULT] Security issues require review.
+==================================================
