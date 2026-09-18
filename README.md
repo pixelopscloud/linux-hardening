@@ -62,3 +62,6 @@ Tested on:
 ```text
 Ubuntu 24.04 LTS
 # linux-hardening
+
+
+![Linux Security Audit](https://github.com/pixelopscloud/linux-hardening/actions/workflows/security-audit.yml/badge.svg)
